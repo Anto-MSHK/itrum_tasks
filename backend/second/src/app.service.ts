@@ -6,7 +6,7 @@ import { Cron } from '@nestjs/schedule';
 export class AppService {
   @Cron('5 * * * * *')
   async makeOperation() {
-    const curOper = Math.floor(Math.random() * (2 - 0) + 0);
+    const curOper = Math.floor(Math.random() * (1 - 0) + 0);
     const curAmount = Math.floor(Math.random() * (1000 - 1) + 1);
     const urls = [
       'http://localhost:3000/cash/topup/1',
