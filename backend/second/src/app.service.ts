@@ -9,8 +9,8 @@ export class AppService {
     const curOper = Math.random() * (2 - 0) + 0;
     const curAmount = Math.random() * (1000 - 1) + 1;
     const urls = [
-      'http://localhost:3000/topup/1',
-      'http://localhost:3000/withdraw/1',
+      'http://localhost:3000/cash/topup/1',
+      'http://localhost:3000/cash/withdraw/1',
     ];
     await axios
       .post(urls[curOper], { amount: curAmount })
