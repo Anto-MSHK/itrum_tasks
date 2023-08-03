@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { CashService } from './cash.service';
 import { Cash } from './cash.model';
 import { AppModule } from 'src/app.module';
@@ -12,7 +12,7 @@ export class CashController {
     return this.cashService.getCashScoreById(id);
   }
 
-  @Get('topup/:id')
+  @Post('topup/:id')
   async topUpCashScore(
     @Param('id') id: number,
     @Body('amount') amount: number,
@@ -20,7 +20,7 @@ export class CashController {
     return this.cashService.topUpCashScore(id, amount);
   }
 
-  @Get('withdraw/:id')
+  @Post('withdraw/:id')
   async withdrawCashScore(
     @Param('id') id: number,
     @Body('amount') amount: number,

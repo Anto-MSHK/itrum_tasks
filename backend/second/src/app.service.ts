@@ -13,15 +13,7 @@ export class AppService {
       'http://localhost:3000/withdraw/1',
     ];
     await axios
-      .post(
-        urls[curOper],
-        { amount: curAmount },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        },
-      )
+      .post(urls[curOper], { amount: curAmount })
       .then((res) => {
         return res.data;
       })
